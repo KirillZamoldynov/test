@@ -34,7 +34,6 @@ class Answer(AnswerBase):
     id: int
     question_id: int
     created_at: datetime
-    updated_at: datetime
 
     model_config = ConfigDict(from_attributes=True)
 
@@ -59,7 +58,6 @@ class QuestionCreate(QuestionBase):
 class Question(QuestionBase):
     id: int
     created_at: datetime
-    updated_at: datetime
 
     model_config = ConfigDict(from_attributes=True)
 

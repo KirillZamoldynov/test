@@ -15,7 +15,7 @@ async def lifespan(app: FastAPI):
     logger.info("Сервис остановлен")
 
 
-app = FastAPI(title="Q&A API Service", lifespan=lifespan)
+app = FastAPI(title="API Service", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,

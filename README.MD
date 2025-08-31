@@ -124,13 +124,26 @@ API доступен по адресу: http://localhost:8000
 
 ## Тестирование
 
-```bash
-# Запуск тестов
-docker-compose exec app pytest
+Проект включает полный набор тестов (19 тестов) с проверкой всех API endpoints, валидации и бизнес-логики.
 
-# Тесты с покрытием
-docker-compose exec app pytest --cov=app
+### Запуск тестов
+
+```bash
+# Все тесты с подробным выводом
+docker-compose exec app pytest tests/ -v
+
+# Конкретный тест
+docker-compose exec app pytest tests/api_test.py::test_health_check -v
 ```
+
+### Что тестируется
+
+- Все API endpoints (CRUD операции)
+- Валидация входных данных
+- Обработка ошибок (404, 422)
+- Каскадное удаление
+- Интеграционные сценарии
+- Health check endpoints
 
 
 ## Миграции
